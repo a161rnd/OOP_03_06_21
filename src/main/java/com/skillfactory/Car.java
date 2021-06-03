@@ -1,12 +1,12 @@
 package com.skillfactory;
 
-public class Car extends Transport implements Rideable{
+public abstract class Car extends Transport implements Rideable{
     String brand;
     int horsePower;
     boolean isAwd;
     float acceleration;
 
-    Car() {
+    public Car() {
         this("Mazda", 190, false, 10);
     }
 
@@ -18,9 +18,7 @@ public class Car extends Transport implements Rideable{
         type = "Car";
     }
 
-    void start() {
-        System.out.println(brand + " has been started");
-    }
+    abstract void start();
 
     void setAcceleration(float acceleration) {
         this.acceleration = acceleration;
