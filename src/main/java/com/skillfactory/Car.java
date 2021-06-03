@@ -1,6 +1,6 @@
 package com.skillfactory;
 
-public class Car {
+public class Car extends Transport implements Rideable{
     String brand;
     int horsePower;
     boolean isAwd;
@@ -15,6 +15,7 @@ public class Car {
         this.horsePower = horsePower;
         this.isAwd = isAwd;
         this.acceleration = acceleration;
+        type = "Car";
     }
 
     void start() {
@@ -27,5 +28,10 @@ public class Car {
 
     float countSpeed(float time) {
         return (100 / acceleration) * time;
+    }
+
+    @Override
+    public void ride() {
+        System.out.println("Riding car");
     }
 }
